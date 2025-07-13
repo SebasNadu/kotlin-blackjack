@@ -9,6 +9,7 @@ class Dealer(name: String = "Dealer", internal val deck: Deck = Deck.generateADe
     private var showAllCards = false
     val result: String
         get() = resultTracker.toString()
+    private var profit: Int = 0
 
     fun shuffleDeck() = deck.shuffle()
 
