@@ -26,12 +26,12 @@ object InputView {
         return input
     }
 
-    fun getBettingAmount(playerName: String): Int {
+    fun getBettingAmount(playerName: String): Double {
         println(betPrompt(playerName))
         val input = readLine()?.trim() ?: ""
         return try {
-            input.toInt().also {
-                require(it > 0) { "Betting amount should be greater than zero." }
+            input.toDouble().also {
+                require(it > 0.0) { "Betting amount should be greater than zero." }
             }
         } catch (e: NumberFormatException) {
             throw IllegalArgumentException("Invalid betting amount: $input. Please enter a valid number.")
